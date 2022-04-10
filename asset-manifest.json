@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/invoice-app-client/static/css/main.2a065bae.css",
-    "main.js": "/invoice-app-client/static/js/main.1c1102d3.js",
+    "main.css": "/invoice-app-client/static/css/main.983d3806.css",
+    "main.js": "/invoice-app-client/static/js/main.f94cfc9e.js",
     "static/media/illustration.svg": "/invoice-app-client/static/media/illustration.86671679a783bcbf513b20a1b6bcf8bd.svg",
     "index.html": "/invoice-app-client/index.html",
     "static/media/logo.svg": "/invoice-app-client/static/media/logo.e8c9e71e5f292af8e66b49e99439f7b7.svg",
-    "main.2a065bae.css.map": "/invoice-app-client/static/css/main.2a065bae.css.map",
-    "main.1c1102d3.js.map": "/invoice-app-client/static/js/main.1c1102d3.js.map"
+    "main.983d3806.css.map": "/invoice-app-client/static/css/main.983d3806.css.map",
+    "main.f94cfc9e.js.map": "/invoice-app-client/static/js/main.f94cfc9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a065bae.css",
-    "static/js/main.1c1102d3.js"
+    "static/css/main.983d3806.css",
+    "static/js/main.f94cfc9e.js"
   ]
 }

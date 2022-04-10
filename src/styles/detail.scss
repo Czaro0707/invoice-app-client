@@ -1,0 +1,314 @@
+.detailPage {
+  padding-bottom: 50px;
+}
+
+.detailPage--modal {
+  display: block;
+  padding-bottom: 50px;
+  &::after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+  }
+}
+
+.detail {
+  margin: 110px 20px;
+  color: var(--color-description);
+  &__title {
+    margin-bottom: 50px;
+
+    i {
+      color: #7c5dfa;
+      font-size: 1.5rem;
+    }
+    span {
+      cursor: pointer;
+      color: var(--color-headings);
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    span:hover {
+      color: #7c5dfa;
+    }
+  }
+
+  &__container {
+    background-color: var(--bg-input);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  &__up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 105px;
+    @include breakpoint(xxs) {
+      padding: 0 25px;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+      cursor: default;
+    }
+    &__type {
+      border-radius: 7px;
+      i {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // height: 750px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    @include breakpoint(ssm) {
+      padding: 35px;
+    }
+    cursor: default;
+    &__sender {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      &__title {
+        @include breakpoint(xxs) {
+          font-size: 1.4rem;
+        }
+        margin-bottom: 30px;
+        p:nth-child(1) {
+          margin-bottom: 5px;
+          strong {
+            color: var(--color-headings);
+          }
+        }
+      }
+      &__info {
+        @include breakpoint(xxs) {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          @include breakpoint(ssm) {
+            right: 35px;
+            top: 35px;
+          }
+        }
+        p {
+          margin-bottom: 3px;
+        }
+      }
+    }
+
+    &__client {
+      display: flex;
+      // justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+
+      &__date {
+        flex-basis: 45%;
+        @include breakpoint(xs) {
+          flex-basis: 30%;
+        }
+        &__invoiceDate {
+          margin-bottom: 30px;
+        }
+        &__invoiceDate,
+        &__paymentDue {
+          p {
+            margin-bottom: 15px;
+          }
+          strong {
+            color: var(--color-headings);
+            font-size: 1.5rem;
+          }
+        }
+      }
+      &__bill {
+        flex-basis: 35%;
+        @include breakpoint(xs) {
+          flex-basis: 30%;
+        }
+        &__title {
+          margin-bottom: 15px;
+        }
+        &__name {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: var(--color-headings);
+          margin-bottom: 10px;
+        }
+        &__clientInfo {
+          p {
+            margin-bottom: 5px;
+          }
+        }
+      }
+      &__email {
+        margin-top: 30px;
+        flex-basis: 100%;
+        @include breakpoint(xs) {
+          flex-basis: 30%;
+          margin-top: 0;
+        }
+        P {
+          margin-bottom: 15px;
+        }
+        strong {
+          color: var(--color-headings);
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      background-color: var(--bg-item);
+      &__up {
+        padding: 20px;
+
+        &__titles {
+          display: none;
+          justify-content: space-between;
+          margin-bottom: 35px;
+          * {
+            flex-basis: 25%;
+            text-align: center;
+          }
+          @include breakpoint(xs) {
+            display: flex;
+          }
+        }
+      }
+      &__down {
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        background-color: var(--bg-amount);
+        height: 90px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        @include breakpoint(xs) {
+          padding: 0 50px;
+        }
+        p:nth-child(2) {
+          font-size: 1.8rem;
+          @include breakpoint(xs) {
+            font-size: 2.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 30px;
+    background-color: var(--bg-input);
+    height: 105px;
+    width: 100%;
+    z-index: 1;
+    @include breakpoint(xxs) {
+      padding: 0 40px;
+    }
+    @include breakpoint(ssm) {
+      position: static;
+      width: 360px;
+      padding: 0;
+    }
+    button {
+      font-family: "Spartan", sans-serif;
+      height: 60px;
+      flex-basis: 30%;
+      border-radius: 40%;
+      font-weight: 500;
+      font-size: 1.2rem;
+      @include breakpoint(xxxs) {
+        height: 45px;
+        border-radius: 20px;
+        max-width: 120px;
+      }
+    }
+  }
+
+  @include breakpoint(xs) {
+    margin: 140px 40px 0;
+  }
+  @include breakpoint(sm) {
+    margin: 140px auto 0;
+    width: 720px;
+  }
+  @include breakpoint(lg) {
+    margin: 75px auto 0;
+  }
+}
+
+// Item-detail
+
+.item-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  .left {
+    @include breakpoint(xs) {
+      display: none;
+    }
+    h4 {
+      color: var(--color-headings);
+      margin-bottom: 10px;
+    }
+    p {
+      font-weight: bold;
+      color: var(--color-description);
+    }
+  }
+  .right {
+    @include breakpoint(xs) {
+      display: none;
+    }
+    color: var(--color-headings);
+  }
+  .flex {
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    @include breakpoint(xs) {
+      display: flex;
+    }
+    * {
+      flex-basis: 25%;
+      text-align: center;
+      font-weight: bold;
+    }
+    h4 {
+      color: var(--color-headings);
+    }
+    p:nth-child(4) {
+      color: var(--color-headings);
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.invoice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 20px;
+  height: 135px;
+  background-color: var(--bg-input);
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  @include breakpoint(ssm) {
+    display: flex;
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__id {
+    font-size: 1.2rem;
+    color: var(--color-description);
+    strong {
+      color: var(--color-headings);
+    }
+    @include breakpoint(ssm) {
+      margin-right: 25px;
+      order: 1;
+    }
+  }
+  &__client-name {
+    font-size: 1.2rem;
+    justify-self: end;
+    color: var(--color-description);
+    font-weight: 500;
+    max-width: 130px;
+    @include breakpoint(ssm) {
+      order: 3;
+      margin-right: 45px;
+    }
+    @include breakpoint(sm) {
+      margin-right: 95px;
+    }
+  }
+  &__multiple {
+    font-size: 1.2rem;
+    // color: #888ba0;
+    @include breakpoint(ssm) {
+      display: none;
+    }
+    &__date {
+      margin-bottom: 5px;
+      color: var(--color-description);
+    }
+    &__cost {
+      // width: 50px;
+      font-weight: 700;
+      color: var(--color-headings);
+      font-size: 1.5rem;
+    }
+  }
+  &__type {
+    justify-self: end;
+    @include breakpoint(ssm) {
+      order: 5;
+      margin-right: 25px;
+    }
+    i {
+      font-size: 1rem;
+    }
+  }
+  &:hover {
+    border: 1px solid #7c5dfa;
+  }
+  &__date,
+  &__cost {
+    display: none;
+    @include breakpoint(ssm) {
+      display: block;
+    }
+  }
+  &__date {
+    font-size: 1.2rem;
+    color: var(--color-description);
+    @include breakpoint(ssm) {
+      margin-right: 45px;
+      order: 2;
+    }
+  }
+  &__cost {
+    // flex-basis: 25%;
+    max-width: 130px;
+    font-weight: 700;
+    color: var(--color-headings);
+    font-size: 1.5rem;
+    @include breakpoint(ssm) {
+      order: 4;
+      margin-right: 25px;
+    }
+  }
+  &__detail {
+    display: none;
+    @include breakpoint(ssm) {
+      order: 6;
+      display: block;
+      color: #7c5dfa;
+      font-size: 1.2rem;
+    }
+  }
+}

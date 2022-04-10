@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+@import "./variables.scss";
+@import "./header.scss";
+@import "./main.scss";
+@import "./management.scss";
+@import "./invoiceList.scss";
+@import "./invoice.scss";
+@import "./form.scss";
+@import "./detail.scss";
+@import "./deleteModal.scss";
+@import "./noInvoices.scss";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--bg-content);
+  font-family: "Spartan", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

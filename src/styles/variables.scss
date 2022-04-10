@@ -1,0 +1,175 @@
+html {
+  --bg-main: #373b53;
+
+  --bg-content: #f8f8fb;
+
+  --bg-input: #fff;
+  --bg-form: #fff;
+  --bg-item: #f9fafe;
+  --bg-amount: #373b53;
+
+  --bg-paid: #f3fdf9;
+
+  --bg-pending: #fff8f0;
+
+  --bg-draft: #f3f3f5;
+
+  --bg-edit: #f3f3f5;
+  --color-headings: #000000;
+
+  --color-description: #888ba0;
+  --color-input-border: #dfe3fa;
+}
+
+html[data-theme="dark"] {
+  --bg-main: #1e2139;
+  --bg-content: #141625;
+  --bg-input: #1e2139;
+  --bg-form: #141625;
+  --bg-item: #252945;
+  --bg-amount: #0c0e16;
+
+  --bg-paid: #1f2c3f;
+  --bg-pending: #2b2736;
+  --bg-draft: #1f223b;
+  --bg-edit: #252945;
+
+  --color-headings: #ffffff;
+  --color-description: #ffffff;
+
+  --color-input-border: #1e2139;
+}
+
+$breakpoints: (
+  xxxs: 336px,
+  xxs: 422px,
+  xs: 556px,
+  ssm: 628px,
+  sm: 768px,
+  md: 896px,
+  lg: 951px,
+  xl: 1024px,
+  xxl: 1280px,
+);
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media ( min-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
+      @content;
+    }
+  } @else if
+    type_of($breakpoint) ==
+    number and
+    unit($breakpoint) ==
+    px or
+    unit($breakpoint) ==
+    em or
+    unit($breakpoint) ==
+    rem
+  {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @warn "Nie można pobrać żadnej wartości z `#{$breakpoint}`. Nie jest zdefiniowany w mapie `$breakpoints` lub jest nieprawidłową liczbą px, em, lub rem.";
+  }
+}
+
+.primary-button,
+.gray-button,
+.draft-button,
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  background-color: #7c5dfa;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten(#7c5dfa, 5%);
+  }
+}
+
+.gray-button {
+  background-color: var(--bg-edit);
+  color: #7e88c3;
+  &:hover {
+    background-color: #d2d3d6;
+  }
+}
+
+.draft-button {
+  background-color: #373b53;
+  color: #7e88c3;
+  &:hover {
+    background-color: darken(#373b53, 20%);
+  }
+}
+
+.delete {
+  background-color: #ec5757;
+  color: #fff;
+  &:hover {
+    background-color: lighten(#ec5757, 10%);
+  }
+}
+
+.paid,
+.draft,
+.pending {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 105px;
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+.paid {
+  background-color: var(--bg-paid);
+  color: #33d69f;
+  padding: 0 22px;
+}
+
+.pending {
+  background-color: var(--bg-pending);
+  color: #ff8f00;
+}
+.draft {
+  background-color: var(--bg-draft);
+  color: #373b53;
+  padding: 0 22px;
+}
+
+.loading {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    animation: move infinite alternate 0.5s;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

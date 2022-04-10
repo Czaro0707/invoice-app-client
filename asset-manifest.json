@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2a065bae.css",
-    "main.js": "/static/js/main.e9f6c973.js",
-    "static/media/illustration.svg": "/static/media/illustration.86671679a783bcbf513b20a1b6bcf8bd.svg",
-    "index.html": "/index.html",
-    "static/media/logo.svg": "/static/media/logo.e8c9e71e5f292af8e66b49e99439f7b7.svg",
-    "main.2a065bae.css.map": "/static/css/main.2a065bae.css.map",
-    "main.e9f6c973.js.map": "/static/js/main.e9f6c973.js.map"
+    "main.css": "/invoice-app-client/static/css/main.2a065bae.css",
+    "main.js": "/invoice-app-client/static/js/main.5846e4a9.js",
+    "static/media/illustration.svg": "/invoice-app-client/static/media/illustration.86671679a783bcbf513b20a1b6bcf8bd.svg",
+    "index.html": "/invoice-app-client/index.html",
+    "static/media/logo.svg": "/invoice-app-client/static/media/logo.e8c9e71e5f292af8e66b49e99439f7b7.svg",
+    "main.2a065bae.css.map": "/invoice-app-client/static/css/main.2a065bae.css.map",
+    "main.5846e4a9.js.map": "/invoice-app-client/static/js/main.5846e4a9.js.map"
   },
   "entrypoints": [
     "static/css/main.2a065bae.css",
-    "static/js/main.e9f6c973.js"
+    "static/js/main.5846e4a9.js"
   ]
 }

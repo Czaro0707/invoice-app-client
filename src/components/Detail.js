@@ -21,7 +21,7 @@ const Detail = ({
 
       if (response.status === 200) {
         setIsLoading(false);
-        navigate("/");
+        navigate("/invoice-app-client");
       }
     } catch (err) {
       console.log(err);
@@ -29,7 +29,7 @@ const Detail = ({
   };
 
   const goBack = () => {
-    navigate("/");
+    navigate("/invoice-app-client");
   };
 
   let {
@@ -67,7 +67,10 @@ const Detail = ({
         <div className="detail__buttons">
           <button
             className="gray-button"
-            onClick={() => setIsFormVisible(true)}
+            onClick={() => {
+              setDetailInvoice(detailInvoice);
+              setIsFormVisible(true);
+            }}
           >
             Edit
           </button>

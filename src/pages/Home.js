@@ -15,7 +15,6 @@ const Home = ({
   const [invoicesDB, setInvoicesDB] = useState([]);
 
   const getInvoicesDB = async () => {
-    console.log(axiosInstance);
     try {
       const response = await axiosInstance.get("/");
       setInvoicesDB(response.data);

@@ -7,9 +7,7 @@ const Item = ({
   checkedFormData,
 }) => {
   const { name, price, quantity, total } = item;
-  console.log(checkedFormData.items);
-  console.log(index);
-
+  
   return (
     <div className="form__fourfold">
       <div

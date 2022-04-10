@@ -22,7 +22,7 @@ const Invoice = ({
       console.log(err);
     }
 
-    navigate(`/invoice/${_id}`);
+    navigate(`/invoice-app-client/invoice/${_id}`);
     setIsFormVisible(false);
   };
 

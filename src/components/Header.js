@@ -18,7 +18,7 @@ const Header = ({ setTheme, theme, setIsFormVisible }) => {
         className="header__logo"
         onClick={() => {
           setIsFormVisible(false);
-          navigate("/");
+          navigate("/invoice-app-client");
         }}
       >
         <img src={logo} alt="logo" />

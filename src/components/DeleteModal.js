@@ -16,7 +16,7 @@ const DeleteModal = ({
 
       if (response.status === 200) {
         setIsLoading(false);
-        navigate("/");
+        navigate("/invoice-app-client");
       }
     } catch (err) {
       console.log(err);

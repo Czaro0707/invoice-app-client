@@ -6,6 +6,7 @@ import { axiosInstance } from "../config";
 const Form = ({ setIsFormVisible, detailInvoice, setDetailInvoice }) => {
   let navigate = useNavigate();
 
+
   let _id;
   let createdAt = "";
   let paymentDue = "";
@@ -24,6 +25,26 @@ const Form = ({ setIsFormVisible, detailInvoice, setDetailInvoice }) => {
   let countryTo = "";
   let items = [];
   let total = 0;
+
+  if (detailInvoice) {
+    createdAt = detailInvoice.createdAt;
+    paymentDue = detailInvoice.paymentDue;
+    description = detailInvoice.description;
+    paymentTerms = detailInvoice.paymentTerms;
+    clientName = detailInvoice.clientName;
+    clientEmail = detailInvoice.clientEmail;
+    status = detailInvoice.status;
+    street = detailInvoice.senderAddress.street;
+    city = detailInvoice.senderAddress.city;
+    postCode = detailInvoice.senderAddress.postCode;
+    country = detailInvoice.senderAddress.country;
+    streetTo = detailInvoice.clientAddress.street;
+    cityTo = detailInvoice.clientAddress.postCode;
+    postCodeTo = detailInvoice.clientAddress.postCode;
+    countryTo = detailInvoice.clientAddress.country;
+    items = detailInvoice.items;
+    total = detailInvoice.total;
+  }
 
   const [formData, setFormData] = useState({
     createdAt: createdAt,
@@ -462,7 +483,7 @@ const Form = ({ setIsFormVisible, detailInvoice, setDetailInvoice }) => {
       if (response.status === 200) {
         setDetailInvoice(response.data);
         setIsFormVisible(false);
-        navigate("/");
+        navigate("/invoice-app-client");
       }
     } catch (err) {
       console.log(err);
